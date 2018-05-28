@@ -1,0 +1,9 @@
+<h1>Add a New Recipe</h1><br><br>
+
+<%= form_tag '/recipes', id: "new_recipe" do %>
+
+  <%= render partial: 'form' %>
+
+  <%= submit_tag "Create Recipe" %>
+
+<% end %>

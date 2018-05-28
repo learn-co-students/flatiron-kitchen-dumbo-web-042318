@@ -1,0 +1,12 @@
+<h1>Edit <%= @ingredient.name %></h1><br><br>
+
+<%= form_tag "/ingredients/#{@ingredient.id}", id: "edit_ingredient_#{@ingredient.id}", :method => :put do %>
+  <%= label_tag :ingredient_name %>
+  <%= text_field_tag 'ingredient[name]', value= @ingredient.name %><br>
+
+  <%= submit_tag "Update Ingredient" %>
+
+<% end %>
+
+
+<%= render 'links' %>

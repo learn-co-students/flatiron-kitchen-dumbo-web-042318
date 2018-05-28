@@ -1,0 +1,12 @@
+<h1>Add a New Ingredient</h1><br><br>
+
+<%= form_tag '/ingredients', id: "new_ingredient" do %>
+  <%= label_tag :ingredient_name %>
+  <%= text_field(:ingredient, :name) %><br>
+
+  <%= submit_tag "Create Ingredient" %>
+
+<% end %>
+
+
+<%= render 'links' %>

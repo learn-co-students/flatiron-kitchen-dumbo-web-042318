@@ -1,0 +1,15 @@
+<%= label_tag :recipe_name, "Recipe Name: "  %>
+<%= text_field_tag 'recipe[name]', value= @recipe.name %><br>
+
+<label>Ingredients: </label><br>
+
+<% Ingredient.all.each do |ing| %>
+  <% if @recipe.ingredients.include?(ing) %>
+    <%= check_box_tag "ingredient_ids[]", ing.name, true, :id => "ingredient_ids_#{ing.id}", :value => ing.id %>
+    <%= label_tag "ingredient_ids_#{ing.id}", ing.name %><br>
+  <% else %>
+    <%= check_box_tag "ingredient_ids[]", ing.name, false, :id => "ingredient_ids_#{ing.id}", :value => ing.id %>
+    <%= label_tag "ingredient_ids_#{ing.id}", ing.name %><br>
+  <% end %>
+
+<% end %>
